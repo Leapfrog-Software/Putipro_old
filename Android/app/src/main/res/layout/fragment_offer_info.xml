@@ -20,7 +20,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="仕事カテゴリー"
+                android:text="仕事基本情報"
                 android:layout_gravity="center"/>
         </FrameLayout>
 
@@ -29,12 +29,33 @@
             android:layout_height="1dp"
             android:background="#c0c0c0"/>
 
-        <ListView
-            android:id="@+id/listView"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="仕事の内容"/>
+        <EditText
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="100dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="単価(円)"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:inputType="text"/>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/nextButton"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:text="次へ"/>
 
     </LinearLayout>
-
 
 </FrameLayout>
