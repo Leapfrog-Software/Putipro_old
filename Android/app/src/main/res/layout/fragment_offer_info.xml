@@ -37,18 +37,38 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="仕事の内容"/>
+            android:text="仕事の内容"
+            android:textSize="14dp"
+            android:textColor="@color/mainBlack"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp" />
         <EditText
+            android:id="@+id/descriptionEditText"
             android:layout_width="match_parent"
-            android:layout_height="100dp" />
+            android:layout_height="100dp"
+            android:background="@drawable/shape_offer_info_description_edittext"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="単価(円)"/>
+            android:text="単価(円)"
+            android:textSize="14dp"
+            android:textColor="@color/mainBlack"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"/>
         <EditText
+            android:id="@+id/feeTextField"
             android:layout_width="match_parent"
             android:layout_height="44dp"
-            android:inputType="text"/>
+            android:inputType="text"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/shape_offer_info_fee_edittext"/>
 
         <View
             android:layout_width="1dp"
@@ -59,7 +79,14 @@
             android:id="@+id/nextButton"
             android:layout_width="match_parent"
             android:layout_height="44dp"
-            android:text="次へ"/>
+            android:text="次へ"
+            android:textSize="18dp"
+            android:textColor="@color/mainBlack"
+            android:textStyle="bold"
+            android:background="@drawable/shape_offer_info_next_button"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"/>
 
     </LinearLayout>
 

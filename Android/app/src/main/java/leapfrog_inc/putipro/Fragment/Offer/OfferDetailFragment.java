@@ -11,6 +11,16 @@ import leapfrog_inc.putipro.R;
 
 public class OfferDetailFragment extends BaseFragment {
 
+    private String mCategoryId = "";
+    private String mDescription = "";
+    private String mFee = "";
+
+    public void setInfo(String categoryId, String description, String fee) {
+        mCategoryId = categoryId;
+        mDescription = description;
+        mFee = fee;
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstance) {
 

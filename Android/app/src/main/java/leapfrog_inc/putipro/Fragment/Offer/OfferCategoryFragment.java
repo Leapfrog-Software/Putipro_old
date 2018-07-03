@@ -55,7 +55,9 @@ public class OfferCategoryFragment extends BaseFragment {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 GetCategoryRequester.CategoryData data = (GetCategoryRequester.CategoryData) adapterView.getItemAtPosition(i);
-                stackFragment(new OfferInfoFragment(), AnimationType.horizontal);
+                OfferInfoFragment fragment = new OfferInfoFragment();
+                fragment.setCategoryId(data.id);
+                stackFragment(fragment, AnimationType.horizontal);
             }
         });
     }
