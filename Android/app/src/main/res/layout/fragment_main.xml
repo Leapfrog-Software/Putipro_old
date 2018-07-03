@@ -12,24 +12,39 @@
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="44dp">
-            <Button
-                android:layout_width="44dp"
+            android:layout_height="@dimen/headerHeight">
+            <ImageButton
+                android:id="@+id/menuButton"
+                android:layout_width="60dp"
                 android:layout_height="match_parent"
-                android:text="三"/>
+                android:src="@drawable/menu_button"
+                android:scaleType="fitCenter"
+                android:background="#0000"/>
         </FrameLayout>
 
         <Button
             android:id="@+id/offerButton"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="仕事を依頼する"/>
+            android:text="仕事を依頼する"
+            android:textSize="18dp"
+            android:textColor="#303030"
+            android:background="@drawable/shape_main_select_button"
+            android:layout_marginTop="70dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"/>
 
         <Button
             android:id="@+id/searchButton"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="仕事を探す"/>
+            android:text="仕事を探す"
+            android:textSize="18dp"
+            android:textColor="#303030"
+            android:background="@drawable/shape_main_select_button"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"/>
 
     </LinearLayout>
 

@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import leapfrog_inc.putipro.Fragment.BaseFragment;
+import leapfrog_inc.putipro.Http.Requester.GetCategoryRequester;
 import leapfrog_inc.putipro.R;
 
 public class OfferCategoryFragment extends BaseFragment {
@@ -23,22 +25,27 @@ public class OfferCategoryFragment extends BaseFragment {
 
         View view = inflater.inflate(R.layout.fragment_offer_category, null);
 
+        initAction(view);
         initListView(view);
 
         return view;
     }
 
+    private void initAction(View view) {
+
+        ((ImageButton)view.findViewById(R.id.backButton)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                popFragment(AnimationType.horizontal);
+            }
+        });
+    }
+
     private void initListView(View view) {
 
-        ArrayList<OfferCategoryData> dataList = new ArrayList();
-        dataList.add(OfferCategoryData.create("0", "掃除"));
-        dataList.add(OfferCategoryData.create("1", "日曜大工"));
-        dataList.add(OfferCategoryData.create("2", "見守り"));
-        dataList.add(OfferCategoryData.create("3", "買い物"));
-
         OfferCategoryAdapter adapter = new OfferCategoryAdapter(getActivity());
-        for (int i = 0; i < dataList.size(); i++) {
-            adapter.add(dataList.get(i));
+        for (int i = 0; i < GetCategoryRequester.getInstance().getDataList().size(); i++) {
+            adapter.add(GetCategoryRequester.getInstance().getDataList().get(i));
         }
         adapter.notifyDataSetChanged();
 
@@ -47,25 +54,13 @@ public class OfferCategoryFragment extends BaseFragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                OfferCategoryData data = (OfferCategoryData) adapterView.getItemAtPosition(i);
+                GetCategoryRequester.CategoryData data = (GetCategoryRequester.CategoryData) adapterView.getItemAtPosition(i);
                 stackFragment(new OfferInfoFragment(), AnimationType.horizontal);
             }
         });
     }
 
-    private static class OfferCategoryData {
-        String no;
-        String name;
-
-        public static OfferCategoryData create(String no, String name) {
-            OfferCategoryData data = new OfferCategoryData();
-            data.no = no;
-            data.name = name;
-            return data;
-        }
-    }
-
-    public static class OfferCategoryAdapter extends ArrayAdapter<OfferCategoryData> {
+    public static class OfferCategoryAdapter extends ArrayAdapter<GetCategoryRequester.CategoryData> {
 
         LayoutInflater mInflater;
         Context mContext;
@@ -81,7 +76,7 @@ public class OfferCategoryFragment extends BaseFragment {
 
             convertView = mInflater.inflate(R.layout.adapter_offer_category, parent, false);
 
-            OfferCategoryData data = getItem(position);
+            GetCategoryRequester.CategoryData data = getItem(position);
 
             ((TextView)convertView.findViewById(R.id.nameTextView)).setText(data.name);
 
