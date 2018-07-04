@@ -78,4 +78,13 @@ public class GetCategoryRequester {
     public ArrayList<CategoryData> getDataList() {
         return mDataList;
     }
+
+    public CategoryData query(String id) {
+        for (int i = 0; i < mDataList.size(); i++) {
+            if (mDataList.get(i).id.equals(id)) {
+                return mDataList.get(i);
+            }
+        }
+        return null;
+    }
 }

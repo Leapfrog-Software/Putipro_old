@@ -84,4 +84,8 @@ public class GetUserRequester {
     public interface GetUserCallback {
         void didReceiveData(boolean result);
     }
+
+    public ArrayList<UserData> getDataList() {
+        return mDataList;
+    }
 }
