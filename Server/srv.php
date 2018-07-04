@@ -53,6 +53,7 @@ function getUser() {
     $users[] = Array("id" => $userData->id,
                     "name" => $userData->name,
                     "age" => $userData->age,
+                    "gender" => $userData->gender,
                     "message" => $userData->message,
                     "phone" => $userData->phone,
                     "interviewDate" => $userData->interviewDate);
@@ -61,6 +62,13 @@ function getUser() {
 }
 
 function createWork() {
+
+  $categoryId = $_POST["categoryId"];
+  $description = $_POST["description"];
+  $fee = $_POST["date"];
+  $date = $_POST["date"];
+  $ordererId = $_POST["ordererId"];
+  $receiverId = $_POST["receiverId"];
 
   if (Work::create($categoryId, $description, $fee, $date, $ordererId, $receiverId)) {
     echo(json_encode(Array("result" => "0")));
