@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import leapfrog_inc.putipro.Fragment.BaseFragment;
 import leapfrog_inc.putipro.Fragment.Offer.OfferCategoryFragment;
@@ -25,10 +26,24 @@ public class MainFragment extends BaseFragment {
 
     private void initAction(View view) {
 
+        ((ImageButton)view.findViewById(R.id.menuButton)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
         ((Button)view.findViewById(R.id.offerButton)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 stackFragment(new OfferCategoryFragment(), AnimationType.horizontal);
+            }
+        });
+
+        ((Button)view.findViewById(R.id.searchButton)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
         });
     }

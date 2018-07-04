@@ -2,8 +2,8 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/rootLayout"
-    android:background="#fff">
+    android:background="#fff"
+    android:id="@+id/rootLayout">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -22,7 +22,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="仕事基本情報"
+                android:text="仕事詳細情報"
                 android:textSize="@dimen/headerTextSize"
                 android:textStyle="bold"
                 android:textColor="@color/headerTitleColor"
@@ -37,38 +37,76 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="仕事の内容"
+            android:text="希望日"
             android:textSize="14dp"
             android:textColor="@color/mainBlack"
             android:layout_marginTop="30dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp" />
-        <EditText
-            android:id="@+id/descriptionEditText"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:background="@drawable/shape_offer_info_description_edittext"
-            android:layout_marginTop="4dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="単価(円)"
-            android:textSize="14dp"
-            android:textColor="@color/mainBlack"
-            android:layout_marginTop="30dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"/>
-        <EditText
-            android:id="@+id/feeTextField"
+            android:layout_marginLeft="20dp"/>
+        <Button
+            android:id="@+id/dateButton"
             android:layout_width="match_parent"
             android:layout_height="44dp"
-            android:inputType="text"
+            android:text="2018/1/1"
+            android:textSize="16dp"
+            android:textColor="@color/mainBlack"
             android:layout_marginTop="4dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:background="@drawable/shape_offer_info_fee_edittext"/>
+            android:background="@drawable/shape_offer_detail_date_button"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="希望時間"
+            android:textSize="14dp"
+            android:textColor="@color/mainBlack"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"/>
+        <Button
+            android:id="@+id/timeButton"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:text="10:00"
+            android:textSize="16dp"
+            android:textColor="@color/mainBlack"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/shape_offer_detail_date_button"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="名前"
+            android:textSize="14dp"
+            android:textColor="@color/mainBlack"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"/>
+        <EditText
+            android:id="@+id/nameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@drawable/shape_offer_detail_edittext"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="年齢"
+            android:textSize="14dp"
+            android:textColor="@color/mainBlack"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"/>
+        <EditText
+            android:id="@+id/ageEditText"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@drawable/shape_offer_detail_edittext"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp" />
 
         <View
             android:layout_width="1dp"
@@ -83,11 +121,9 @@
             android:textSize="18dp"
             android:textColor="@color/mainBlack"
             android:textStyle="bold"
-            android:background="@drawable/shape_offer_info_next_button"
+            android:background="@drawable/shape_offer_detail_next_button"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="20dp"/>
-
     </LinearLayout>
-
 </FrameLayout>
