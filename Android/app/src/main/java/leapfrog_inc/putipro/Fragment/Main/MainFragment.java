@@ -13,6 +13,7 @@ import java.util.ArrayList;
 
 import leapfrog_inc.putipro.Fragment.BaseFragment;
 import leapfrog_inc.putipro.Fragment.Offer.OfferCategoryFragment;
+import leapfrog_inc.putipro.Fragment.Registration.IdentificationInFragment;
 import leapfrog_inc.putipro.Fragment.Registration.RegistrationTermsFragment;
 import leapfrog_inc.putipro.Function.SaveData;
 import leapfrog_inc.putipro.Http.Requester.GetUserRequester;
@@ -54,7 +55,7 @@ public class MainFragment extends BaseFragment {
                     RegistrationTermsFragment fragment = new RegistrationTermsFragment();
                     stackFragment(fragment, AnimationType.horizontal);
                 } else {
-
+                    stackFragment(new IdentificationInFragment(), AnimationType.horizontal);
                 }
             }
         });
