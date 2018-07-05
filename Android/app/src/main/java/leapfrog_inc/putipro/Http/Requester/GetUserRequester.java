@@ -88,4 +88,13 @@ public class GetUserRequester {
     public ArrayList<UserData> getDataList() {
         return mDataList;
     }
+
+    public UserData query(String userId) {
+        for (int i = 0; i < mDataList.size(); i++) {
+            if (mDataList.get(i).id.equals(userId)) {
+                return mDataList.get(i);
+            }
+        }
+        return null;
+    }
 }

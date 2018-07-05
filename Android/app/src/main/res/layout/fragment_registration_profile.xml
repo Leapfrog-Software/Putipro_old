@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rootLayout"
+    android:background="#fff">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/headerHeight">
+            <ImageButton
+                android:id="@+id/backButton"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/back_button"
+                android:scaleType="fitCenter"
+                android:background="#0000"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="プロフィール"
+                android:textSize="@dimen/headerTextSize"
+                android:textStyle="bold"
+                android:textColor="@color/headerTitleColor"
+                android:layout_gravity="center"/>
+        </FrameLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#c0c0c0"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fillViewport="true"
+            android:scrollbars="none"
+            android:overScrollMode="never"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <!-- 顔写真 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="30dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="顔写真"
+                        android:textSize="14dp"
+                        android:textColor="@color/mainBlack"/>
+                    <ImageButton
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="#0000"
+                        android:layout_marginLeft="20dp"/>
+                </LinearLayout>
+
+                <!-- 名前 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="30dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="名前"
+                        android:textSize="14dp"
+                        android:textColor="@color/mainBlack"/>
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:inputType="text"
+                        android:background="@drawable/shape_registration_profile_edittext_single"
+                        android:layout_marginTop="4dp"
+                        android:textAlignment="center"/>
+                </LinearLayout>
+
+                <!-- 年齢 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="30dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="年齢"
+                        android:textSize="14dp"
+                        android:textColor="@color/mainBlack"/>
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:inputType="text"
+                        android:background="@drawable/shape_registration_profile_edittext_single"
+                        android:layout_marginTop="4dp"
+                        android:textAlignment="center"/>
+                </LinearLayout>
+
+                <!-- 性別 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="30dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="性別"
+                        android:textSize="14dp"
+                        android:textColor="@color/mainBlack"/>
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:text="男性"
+                        android:textSize="14dp"
+                        android:textColor="@color/mainBlack"
+                        android:background="@drawable/shape_registration_profile_edittext_single"
+                        android:layout_marginTop="4dp"/>
+                </LinearLayout>
+
+                <!-- メッセージ -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="30dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="メッセージ"
+                        android:textSize="14dp"
+                        android:textColor="@color/mainBlack"/>
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:background="@drawable/shape_registration_profile_edittext_multi"
+                        android:layout_marginTop="4dp"/>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/nextButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="参加を希望"
+                    android:textSize="16dp"
+                    android:textColor="@color/mainBlack"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/shape_registration_profile_next_button"/>
+
+            </LinearLayout>
+        </ScrollView>
+
+
+    </LinearLayout>
+</FrameLayout>
