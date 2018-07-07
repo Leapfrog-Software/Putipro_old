@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import leapfrog_inc.putipro.Fragment.BaseFragment;
+import leapfrog_inc.putipro.Fragment.Common.Dialog;
 import leapfrog_inc.putipro.Fragment.Main.MainFragment;
 import leapfrog_inc.putipro.Function.SaveData;
 import leapfrog_inc.putipro.Http.Requester.CreateUserRequester;
@@ -53,7 +54,12 @@ public class SplashFragment extends BaseFragment {
 
                         fetchData();
                     } else {
-                        // TODO
+                        Dialog.show(getActivity(), Dialog.Style.error, "エラー", "通信に失敗しました", new Dialog.DialogCallback() {
+                            @Override
+                            public void didClose() {
+                                createUser();
+                            }
+                        });
                     }
                 }
             });
@@ -96,7 +102,12 @@ public class SplashFragment extends BaseFragment {
 
         if ((mGetUserFetchResult == FetchResult.error)
                 || (mGetCategoryFetchResult == FetchResult.error)) {
-            // TODO
+            Dialog.show(getActivity(), Dialog.Style.error, "エラー", "通信に失敗しました", new Dialog.DialogCallback() {
+                @Override
+                public void didClose() {
+                    fetchData();
+                }
+            });
             return;
         }
 

@@ -12,6 +12,7 @@ import android.widget.ImageButton;
 import java.util.ArrayList;
 
 import leapfrog_inc.putipro.Fragment.BaseFragment;
+import leapfrog_inc.putipro.Fragment.Menu.MenuFragment;
 import leapfrog_inc.putipro.Fragment.Offer.OfferCategoryFragment;
 import leapfrog_inc.putipro.Fragment.Registration.IdentificationInFragment;
 import leapfrog_inc.putipro.Fragment.Registration.RegistrationTermsFragment;
@@ -36,7 +37,7 @@ public class MainFragment extends BaseFragment {
         ((ImageButton)view.findViewById(R.id.menuButton)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                stackFragment(new MenuFragment(), AnimationType.none);
             }
         });
 

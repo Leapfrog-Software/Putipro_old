@@ -20,4 +20,8 @@ public class MainActivity extends AppCompatActivity {
         transaction.add(R.id.rootContainer, new SplashFragment());
         transaction.commitAllowingStateLoss();
     }
+
+    public int getSubContainerId() {
+        return R.id.subContainer;
+    }
 }
