@@ -8,6 +8,8 @@
     <color name="headerTitleColor">#303030</color>
     <color name="headerColorOffer">#F1F8E5</color>
     <color name="headerColorRegistration">#F5EDFC</color>
+    <color name="headerColorMenu">#FFFFE3</color>
+
 
     <color name="mainBlue">#094A9C</color>
 

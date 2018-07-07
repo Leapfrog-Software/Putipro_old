@@ -11,16 +11,61 @@
         android:background="#0000"
         android:orientation="horizontal">
 
-        <FrameLayout
+        <LinearLayout
             android:id="@+id/moveLayout"
             android:layout_width="0dp"
             android:layout_weight="3"
             android:layout_height="match_parent"
-            android:background="#fff">
+            android:background="#fff"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/offerHistoryButton"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="依頼履歴"
+                android:textSize="18dp"
+                android:textColor="#505050"
+                android:textAlignment="textStart"
+                android:background="#0000"
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="20dp"/>
+
+            <Button
+                android:id="@+id/receiveHistoryButton"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="受注履歴"
+                android:textSize="18dp"
+                android:textColor="#505050"
+                android:textAlignment="textStart"
+                android:background="#0000"
+                android:layout_marginLeft="20dp"/>
+
+            <Button
+                android:id="@+id/paymentButton"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="入金手続き"
+                android:textSize="18dp"
+                android:textColor="#505050"
+                android:textAlignment="textStart"
+                android:background="#0000"
+                android:layout_marginLeft="20dp"/>
+
+            <Button
+                android:id="@+id/questionButton"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="問い合わせ"
+                android:textSize="18dp"
+                android:textColor="#505050"
+                android:textAlignment="textStart"
+                android:background="#0000"
+                android:layout_marginLeft="20dp"/>
 
 
-
-        </FrameLayout>
+        </LinearLayout>
 
         <Button
             android:id="@+id/closeButton"

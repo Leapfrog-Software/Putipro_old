@@ -8,6 +8,7 @@ import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 
 import leapfrog_inc.putipro.Fragment.BaseFragment;
 import leapfrog_inc.putipro.Function.DeviceUtility;
@@ -34,11 +35,39 @@ public class MenuFragment extends BaseFragment {
         animation.setRepeatCount(0);
         animation.setFillAfter(true);
 
-        FrameLayout moveLayout = (FrameLayout)view.findViewById(R.id.moveLayout);
+        LinearLayout moveLayout = (LinearLayout)view.findViewById(R.id.moveLayout);
         moveLayout.startAnimation(animation);
     }
 
     private void initAction(View view) {
+
+        ((Button)view.findViewById(R.id.offerHistoryButton)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                stackTemporary("依頼履歴", "依頼履歴はありません");
+            }
+        });
+
+        ((Button)view.findViewById(R.id.receiveHistoryButton)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                stackTemporary("受注履歴", "受注履歴はありません");
+            }
+        });
+
+        ((Button)view.findViewById(R.id.paymentButton)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                stackTemporary("入金手続き", "該当する入金データがありません");
+            }
+        });
+
+        ((Button)view.findViewById(R.id.questionButton)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                stackFragment(new FragmentInquiry(), AnimationType.horizontal);
+            }
+        });
 
         ((Button)view.findViewById(R.id.closeButton)).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,6 +75,13 @@ public class MenuFragment extends BaseFragment {
                 close();
             }
         });
+    }
+
+    private void stackTemporary(String title, String message) {
+
+        MenuTemporaryFragment fragment = new MenuTemporaryFragment();
+        fragment.set(title, message);
+        stackFragment(fragment, AnimationType.horizontal);
     }
 
     private void close() {
@@ -70,7 +106,7 @@ public class MenuFragment extends BaseFragment {
             public void onAnimationRepeat(Animation animation) {}
         });
 
-        FrameLayout moveLayout = (FrameLayout)view.findViewById(R.id.moveLayout);
+        LinearLayout moveLayout = (LinearLayout)view.findViewById(R.id.moveLayout);
         moveLayout.startAnimation(animation);
     }
 }
