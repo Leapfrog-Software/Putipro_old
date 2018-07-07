@@ -44,7 +44,7 @@ public class MenuFragment extends BaseFragment {
         ((Button)view.findViewById(R.id.offerHistoryButton)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                stackTemporary("依頼履歴", "依頼履歴はありません");
+                stackTemporary("依頼履歴", "承認済みの依頼履歴はありません");
             }
         });
 

@@ -32,7 +32,7 @@ public class UpdateWorkerProfileRequester {
         param.append("&");
         param.append("id=" + SaveData.getInstance().userId);
         param.append("&");
-        param.append("name=" + name);
+        param.append("name=" + Base64Utility.encode(name));
         param.append("&");
         param.append("age=" + age);
         param.append("&");

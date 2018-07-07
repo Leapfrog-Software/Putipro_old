@@ -2,7 +2,8 @@ package leapfrog_inc.putipro.Function;
 
 public class Constants {
 
-    public static String ServerRootUrl = "http://10.0.2.2/putipro/";
+    public static String ServerRootUrl = "http://lfrogs.sakura.ne.jp/putipro/";
+//    public static String ServerRootUrl = "http://10.0.2.2/putipro/";
     public static String ServerApiUrl = Constants.ServerRootUrl + "srv.php";
     public static String ServerUserImageDirectory = Constants.ServerRootUrl + "data/image/user/";
 

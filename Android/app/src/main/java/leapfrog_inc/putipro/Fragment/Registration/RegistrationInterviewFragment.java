@@ -172,7 +172,7 @@ public class RegistrationInterviewFragment extends BaseFragment {
 
         Loading.start(getActivity());
 
-        UpdateWorkerProfileRequester.update("test", "", "", "", "", "", new UpdateWorkerProfileRequester.UpdateWorkerProfileCallback() {
+        UpdateWorkerProfileRequester.update("", "", "", "", "", "", new UpdateWorkerProfileRequester.UpdateWorkerProfileCallback() {
             @Override
             public void didReceiveData(boolean result) {
 
