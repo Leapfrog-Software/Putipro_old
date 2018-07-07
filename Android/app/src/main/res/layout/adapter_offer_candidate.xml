@@ -9,6 +9,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <ImageView
+            android:id="@+id/faceImageView"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginLeft="20dp"
@@ -24,17 +25,28 @@
             android:layout_marginRight="20dp"
             android:layout_gravity="center_vertical">
             <TextView
+                android:id="@+id/nameTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="山田太郎" />
+                android:text="山田太郎"
+                android:textSize="16dp"
+                android:textColor="@color/mainBlack"
+                android:textStyle="bold"/>
             <TextView
+                android:id="@+id/profileTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="29歳 男性" />
+                android:text="29歳 男性"
+                android:textSize="12dp"
+                android:textColor="#909090"/>
             <TextView
+                android:id="@+id/messageTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="よろしくお願いします" />
+                android:text="よろしくお願いします"
+                android:textSize="12dp"
+                android:textColor="@color/mainBlack"
+                android:layout_marginTop="12dp"/>
         </LinearLayout>
 
     </LinearLayout>

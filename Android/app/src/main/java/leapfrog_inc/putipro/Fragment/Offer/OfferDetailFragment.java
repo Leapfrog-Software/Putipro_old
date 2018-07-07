@@ -51,7 +51,7 @@ public class OfferDetailFragment extends BaseFragment {
         mSelectedDay = calendar.get(Calendar.DAY_OF_MONTH);
         mSelectedHour = calendar.get(Calendar.HOUR_OF_DAY);
         mSelectedMinute = calendar.get(Calendar.MINUTE);
-        setSelectedDate();
+        setSelectedDate(view);
 
         return view;
     }
@@ -67,7 +67,7 @@ public class OfferDetailFragment extends BaseFragment {
                         mSelectedYear = year;
                         mSelectedMonth = month;
                         mSelectedDay = dayOfMonth;
-                        setSelectedDate();
+                        setSelectedDate(null);
                     }
                 }, mSelectedYear, mSelectedMonth, mSelectedDay);
                 datePickerDialog.show();
@@ -82,7 +82,7 @@ public class OfferDetailFragment extends BaseFragment {
                     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                         mSelectedHour = hourOfDay;
                         mSelectedMinute = minute;
-                        setSelectedDate();
+                        setSelectedDate(null);
                     }
                 }, mSelectedHour, mSelectedMinute, true);
                 timePickerDialog.show();
@@ -104,9 +104,14 @@ public class OfferDetailFragment extends BaseFragment {
         });
     }
 
-    private void setSelectedDate() {
+    private void setSelectedDate(View v) {
 
-        View view = getView();
+        View view;
+        if (v != null) {
+            view = v;
+        } else {
+            view = getView();
+        }
 
         Calendar calendar = Calendar.getInstance();
         calendar.set(Calendar.YEAR, mSelectedYear);

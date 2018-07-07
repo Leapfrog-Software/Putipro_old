@@ -10,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -17,6 +18,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 
 import leapfrog_inc.putipro.Fragment.BaseFragment;
+import leapfrog_inc.putipro.Function.Constants;
+import leapfrog_inc.putipro.Function.PicassoUtility;
 import leapfrog_inc.putipro.Http.Requester.GetUserRequester;
 import leapfrog_inc.putipro.R;
 
@@ -108,7 +111,15 @@ public class OfferCandidateFragment extends BaseFragment {
 
             GetUserRequester.UserData userData = getItem(position);
 
+            String imageUrl = Constants.ServerUserImageDirectory + userData.id;
+            PicassoUtility.getFaceImage(mContext, imageUrl, (ImageView)convertView.findViewById(R.id.faceImageView));
 
+            ((TextView)convertView.findViewById(R.id.nameTextView)).setText(userData.name);
+
+            String profile = userData.age + "歳 " + userData.gender;
+            ((TextView)convertView.findViewById(R.id.profileTextView)).setText(profile);
+
+            ((TextView)convertView.findViewById(R.id.messageTextView)).setText(userData.message);
 
             return convertView;
         }

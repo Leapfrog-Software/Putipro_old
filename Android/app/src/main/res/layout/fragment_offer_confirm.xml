@@ -11,7 +11,8 @@
         android:orientation="vertical">
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/headerHeight">
+            android:layout_height="@dimen/headerHeight"
+            android:background="@color/headerColorOffer">
             <ImageButton
                 android:id="@+id/backButton"
                 android:layout_width="60dp"
@@ -48,6 +49,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="20dp"/>
             <ImageView
+                android:id="@+id/faceImageView"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center_vertical"
@@ -61,12 +63,14 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="20dp">
                 <TextView
+                    android:id="@+id/nameTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="山田太郎"
                     android:textSize="14dp"
                     android:textColor="@color/mainBlack"/>
                 <TextView
+                    android:id="@+id/profileTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="20歳 男性"
@@ -204,10 +208,10 @@
         <Button
             android:id="@+id/sendButton"
             android:layout_width="match_parent"
-            android:layout_height="44dp"
+            android:layout_height="60dp"
             android:text="送信"
             android:textSize="18dp"
-            android:textColor="@color/mainBlack"
+            android:textColor="#fff"
             android:textStyle="bold"
             android:background="@drawable/shape_offer_confirm_send_button"
             android:layout_marginLeft="20dp"

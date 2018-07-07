@@ -1,22 +1,36 @@
 package leapfrog_inc.putipro.Fragment.Offer;
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.List;
 import java.util.TimeZone;
 
 import leapfrog_inc.putipro.Fragment.BaseFragment;
+import leapfrog_inc.putipro.Fragment.Common.Dialog;
+import leapfrog_inc.putipro.Fragment.Common.Loading;
+import leapfrog_inc.putipro.Fragment.Registration.RegistrationCompleteFragment;
+import leapfrog_inc.putipro.Fragment.Registration.RegistrationInterviewFragment;
+import leapfrog_inc.putipro.Fragment.Registration.RegistrationProfileFragment;
+import leapfrog_inc.putipro.Fragment.Registration.RegistrationTermsFragment;
+import leapfrog_inc.putipro.Function.Constants;
+import leapfrog_inc.putipro.Function.PicassoUtility;
 import leapfrog_inc.putipro.Function.SaveData;
 import leapfrog_inc.putipro.Http.Requester.CreateWorkRequester;
 import leapfrog_inc.putipro.Http.Requester.GetCategoryRequester;
+import leapfrog_inc.putipro.Http.Requester.GetUserRequester;
 import leapfrog_inc.putipro.R;
 
 public class OfferConfirmFragment extends BaseFragment {
@@ -69,6 +83,15 @@ public class OfferConfirmFragment extends BaseFragment {
 
     private void initContents(View view) {
 
+        String imageUrl = Constants.ServerUserImageDirectory + mUserId;
+        PicassoUtility.getFaceImage(getActivity(), imageUrl, (ImageView)view.findViewById(R.id.faceImageView));
+
+        GetUserRequester.UserData userData = GetUserRequester.getInstance().query(mUserId);
+        ((TextView)view.findViewById(R.id.nameTextView)).setText(userData.name);
+
+        String profile = userData.age + "歳 " + userData.gender;
+        ((TextView)view.findViewById(R.id.profileTextView)).setText(profile);
+
         GetCategoryRequester.CategoryData categoryData = GetCategoryRequester.getInstance().query(mCategoryId);
         ((TextView)view.findViewById(R.id.categoryTextView)).setText(categoryData.name);
 
@@ -87,10 +110,33 @@ public class OfferConfirmFragment extends BaseFragment {
         dateFormat.setTimeZone(TimeZone.getTimeZone("Asia/Tokyo"));
         String date = dateFormat.format(mCalendar.getTime());
 
+        Loading.start(getActivity());
+
         CreateWorkRequester.create(mCategoryId, mDescription, mFee, date, SaveData.getInstance().userId, mUserId, new CreateWorkRequester.CreateWorkRequesterCallback() {
             @Override
             public void didReceiveData(boolean result) {
-                    Log.d("", "");
+                Loading.stop(getActivity());
+
+                if (result) {
+                    Dialog.show(getActivity(), Dialog.Style.success, "完了", "仕事の依頼を作成しました", new Dialog.DialogCallback() {
+                        @Override
+                        public void didClose() {
+                            List<Fragment> fragments = getActivity().getSupportFragmentManager().getFragments();
+                            for (int i = 0; i < fragments.size(); i++) {
+                                BaseFragment fragment = (BaseFragment) fragments.get(i);
+                                if ((fragment instanceof OfferInfoFragment)
+                                        || (fragment instanceof OfferCategoryFragment)
+                                        || (fragment instanceof OfferDetailFragment)
+                                        || (fragment instanceof OfferCandidateFragment)
+                                        || (fragment instanceof OfferConfirmFragment)) {
+                                    fragment.popFragment(AnimationType.horizontal);
+                                }
+                            }
+                        }
+                    });
+                } else {
+                    Dialog.show(getActivity(), Dialog.Style.error, "エラー", "通信に失敗しました", null);
+                }
             }
         });
     }
