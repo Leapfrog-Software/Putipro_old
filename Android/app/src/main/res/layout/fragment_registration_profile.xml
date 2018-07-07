@@ -11,7 +11,8 @@
         android:orientation="vertical">
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/headerHeight">
+            android:layout_height="@dimen/headerHeight"
+            android:background="@color/headerColorRegistration">
             <ImageButton
                 android:id="@+id/backButton"
                 android:layout_width="60dp"
@@ -59,13 +60,16 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="顔写真"
-                        android:textSize="14dp"
+                        android:textSize="18dp"
                         android:textColor="@color/mainBlack"/>
                     <ImageButton
+                        android:id="@+id/faceImageView"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:background="#0000"
-                        android:layout_marginLeft="20dp"/>
+                        android:layout_marginLeft="20dp"
+                        android:src="@drawable/image_guide"
+                        android:scaleType="fitCenter"/>
                 </LinearLayout>
 
                 <!-- 名前 -->
@@ -78,15 +82,18 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="名前"
-                        android:textSize="14dp"
+                        android:textSize="18dp"
                         android:textColor="@color/mainBlack"/>
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="44dp"
                         android:inputType="text"
+                        android:textSize="14dp"
+                        android:textColor="@color/mainBlack"
                         android:background="@drawable/shape_registration_profile_edittext_single"
                         android:layout_marginTop="4dp"
-                        android:textAlignment="center"/>
+                        android:paddingLeft="22dp"
+                        android:paddingRight="22dp"/>
                 </LinearLayout>
 
                 <!-- 年齢 -->
@@ -99,15 +106,18 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="年齢"
-                        android:textSize="14dp"
+                        android:textSize="18dp"
                         android:textColor="@color/mainBlack"/>
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="44dp"
-                        android:inputType="text"
+                        android:inputType="number"
+                        android:textSize="14dp"
+                        android:textColor="@color/mainBlack"
                         android:background="@drawable/shape_registration_profile_edittext_single"
                         android:layout_marginTop="4dp"
-                        android:textAlignment="center"/>
+                        android:paddingLeft="22dp"
+                        android:paddingRight="22dp"/>
                 </LinearLayout>
 
                 <!-- 性別 -->
@@ -120,9 +130,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="性別"
-                        android:textSize="14dp"
+                        android:textSize="18dp"
                         android:textColor="@color/mainBlack"/>
                     <Button
+                        android:id="@+id/genderButton"
                         android:layout_width="match_parent"
                         android:layout_height="44dp"
                         android:text="男性"
@@ -147,17 +158,22 @@
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
+                        android:textSize="14dp"
+                        android:textColor="@color/mainBlack"
                         android:background="@drawable/shape_registration_profile_edittext_multi"
-                        android:layout_marginTop="4dp"/>
+                        android:layout_marginTop="4dp"
+                        android:gravity="top"
+                        android:padding="8dp"/>
                 </LinearLayout>
 
                 <Button
                     android:id="@+id/nextButton"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="60dp"
                     android:text="参加を希望"
-                    android:textSize="16dp"
-                    android:textColor="@color/mainBlack"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:textColor="#fff"
                     android:layout_marginTop="30dp"
                     android:layout_marginBottom="20dp"
                     android:background="@drawable/shape_registration_profile_next_button"/>

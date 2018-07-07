@@ -11,7 +11,8 @@
         android:orientation="vertical">
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/headerHeight">
+            android:layout_height="@dimen/headerHeight"
+            android:background="@color/headerColorRegistration">
             <ImageButton
                 android:id="@+id/backButton"
                 android:layout_width="60dp"
@@ -54,11 +55,12 @@
         <Button
             android:id="@+id/nextButton"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:text="同意して次へ"
             android:background="@drawable/shape_registration_terms_next_button"
-            android:textSize="16dp"
-            android:textColor="@color/mainBlack"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="#fff"
             android:layout_marginTop="30dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
