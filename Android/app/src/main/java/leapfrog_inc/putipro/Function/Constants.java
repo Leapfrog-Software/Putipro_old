@@ -13,5 +13,6 @@ public class Constants {
     public static class SharedPreferenceKey {
         public static String Key = "Putipro";
         public static String UserId = "UserId";
+        public static String DidShowTutorial = "DidShowTutorial";
     }
 }

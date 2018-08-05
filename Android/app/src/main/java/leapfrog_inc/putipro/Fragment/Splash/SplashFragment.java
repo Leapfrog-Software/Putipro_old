@@ -111,6 +111,11 @@ public class SplashFragment extends BaseFragment {
             return;
         }
 
-        stackFragment(new MainFragment(), AnimationType.none);
+        SaveData saveData = SaveData.getInstance();
+        if (saveData.didShowTutorial) {
+            stackFragment(new MainFragment(), AnimationType.none);
+        } else {
+            stackFragment(new TutorialFragment(), AnimationType.none);
+        }
     }
 }

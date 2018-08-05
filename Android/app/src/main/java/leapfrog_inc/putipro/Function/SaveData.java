@@ -9,6 +9,7 @@ public class SaveData {
 
     public Context mContext;
     public String userId = "";
+    public boolean didShowTutorial = false;
 
     private SaveData(){}
 
@@ -26,6 +27,7 @@ public class SaveData {
         SharedPreferences data = context.getSharedPreferences(Constants.SharedPreferenceKey.Key, Context.MODE_PRIVATE);
 
         userId = data.getString(Constants.SharedPreferenceKey.UserId, "");
+        didShowTutorial = data.getBoolean(Constants.SharedPreferenceKey.DidShowTutorial, false);
     }
 
     public void save() {
@@ -34,6 +36,7 @@ public class SaveData {
         SharedPreferences.Editor editor = data.edit();
 
         editor.putString(Constants.SharedPreferenceKey.UserId, userId);
+        editor.putBoolean(Constants.SharedPreferenceKey.DidShowTutorial, didShowTutorial);
 
         editor.apply();
     }
